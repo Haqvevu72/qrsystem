@@ -7,4 +7,5 @@ public class Qr: BaseEntity
     public string Title { get; set; }
     public string BgColor { get; set; }
     public string FgColor { get; set; }
+    public string fake { get; set; }
 }
