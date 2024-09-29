@@ -6,6 +6,7 @@ using qrsystem.Models.Dtos.Auth;
 using qrsystem.Models.Entities;
 using qrsystem.Services.JWT;
 using LoginRequest = qrsystem.Models.Dtos.Auth.LoginRequest;
+using RefreshRequest = qrsystem.Models.Dtos.Auth.RefreshRequest;
 using RegisterRequest = qrsystem.Models.Dtos.Auth.RegisterRequest;
 
 namespace qrsystem.Services.AuthServices;

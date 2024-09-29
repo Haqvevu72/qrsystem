@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using qrsystem.Services.AuthServices;
 using LoginRequest = qrsystem.Models.Dtos.Auth.LoginRequest;
+using RefreshRequest = qrsystem.Models.Dtos.Auth.RefreshRequest;
 using RegisterRequest = qrsystem.Models.Dtos.Auth.RegisterRequest;
 
 namespace qrsystem.Controllers;

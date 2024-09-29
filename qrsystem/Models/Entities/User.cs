@@ -11,4 +11,7 @@ public class User: BaseEntity
     public string? PrivateKey { get; set; }
     public string? RefreshToken { get; set; }
     public DateTime? RefreshTokenExpiry { get; set; }
+    
+    // Lazy-loaded collection of QR codes
+    public virtual ICollection<Qr> Qrs { get; set; }
 }

@@ -138,3 +138,5 @@
 /Users/elgunhaqverdiyev/Desktop/qrsystem/qrsystem/obj/Debug/net8.0/qrsystem.pdb
 /Users/elgunhaqverdiyev/Desktop/qrsystem/qrsystem/obj/Debug/net8.0/qrsystem.genruntimeconfig.cache
 /Users/elgunhaqverdiyev/Desktop/qrsystem/qrsystem/obj/Debug/net8.0/ref/qrsystem.dll
+/Users/elgunhaqverdiyev/Desktop/qrsystem/qrsystem/bin/Debug/net8.0/Castle.Core.dll
+/Users/elgunhaqverdiyev/Desktop/qrsystem/qrsystem/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Proxies.dll

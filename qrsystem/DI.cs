@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using qrsystem.Data;
 using qrsystem.Services.AuthServices;
 using qrsystem.Services.JWT;
+using qrsystem.Services.QrServices;
 
 namespace qrsystem;
 
@@ -12,7 +13,7 @@ public static class DI
 {
     public static IServiceCollection AddDbContext(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddDbContext<QrSystemDB>(op => op.UseSqlServer(configuration.GetConnectionString("Default"))
+        services.AddDbContext<QrSystemDB>(op => op.UseLazyLoadingProxies().UseSqlServer(configuration.GetConnectionString("Default"))
             .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
 
         return services;
@@ -23,6 +24,7 @@ public static class DI
         services.AddScoped<ITokenService, TokenService>();
         services.AddScoped<IPasswordService, PasswordService>();
         services.AddScoped<IAuthService, AuthService>();
+        services.AddScoped<IQrService, QrService>();
         
         return services;
     }
