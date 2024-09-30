@@ -34,6 +34,7 @@ public class UserController(IQrService service): ControllerBase
     {
         try
         {
+            await Task.Delay(2000);
             var result = await _qrService.GetAllQrs(userRequest);
             return Ok(result);
         }
