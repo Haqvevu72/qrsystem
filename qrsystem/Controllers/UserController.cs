@@ -12,11 +12,11 @@ public class UserController(IQrService service): ControllerBase
     private readonly IQrService _qrService = service;
 
     [HttpPost("addqr")]
-    public async Task<IActionResult> AddQr([FromBody] QrAdd qrAdd)
+    public async Task<IActionResult> AddQr([FromForm] QrAdd qrAdd, [FromForm]IFormFile Img)
     {
         try
         {
-            var result = await _qrService.AddQr(qrAdd);
+            var result = await _qrService.AddQr(qrAdd,Img);
             return Ok(result);
         }
         catch (InvalidOperationException ex)
@@ -34,7 +34,7 @@ public class UserController(IQrService service): ControllerBase
     {
         try
         {
-            await Task.Delay(2000);
+            await Task.Delay(1000);
             var result = await _qrService.GetAllQrs(userRequest);
             return Ok(result);
         }

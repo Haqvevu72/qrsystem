@@ -7,6 +7,7 @@
 /Users/elgunhaqverdiyev/Desktop/qrsystem/qrsystem/bin/Debug/net8.0/qrsystem.pdb
 /Users/elgunhaqverdiyev/Desktop/qrsystem/qrsystem/bin/Debug/net8.0/Azure.Core.dll
 /Users/elgunhaqverdiyev/Desktop/qrsystem/qrsystem/bin/Debug/net8.0/Azure.Identity.dll
+/Users/elgunhaqverdiyev/Desktop/qrsystem/qrsystem/bin/Debug/net8.0/Castle.Core.dll
 /Users/elgunhaqverdiyev/Desktop/qrsystem/qrsystem/bin/Debug/net8.0/Humanizer.dll
 /Users/elgunhaqverdiyev/Desktop/qrsystem/qrsystem/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /Users/elgunhaqverdiyev/Desktop/qrsystem/qrsystem/bin/Debug/net8.0/Microsoft.AspNetCore.OpenApi.dll
@@ -19,6 +20,7 @@
 /Users/elgunhaqverdiyev/Desktop/qrsystem/qrsystem/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.dll
 /Users/elgunhaqverdiyev/Desktop/qrsystem/qrsystem/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll
 /Users/elgunhaqverdiyev/Desktop/qrsystem/qrsystem/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Design.dll
+/Users/elgunhaqverdiyev/Desktop/qrsystem/qrsystem/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Proxies.dll
 /Users/elgunhaqverdiyev/Desktop/qrsystem/qrsystem/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Relational.dll
 /Users/elgunhaqverdiyev/Desktop/qrsystem/qrsystem/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.SqlServer.dll
 /Users/elgunhaqverdiyev/Desktop/qrsystem/qrsystem/bin/Debug/net8.0/Microsoft.Extensions.DependencyModel.dll
@@ -138,5 +140,3 @@
 /Users/elgunhaqverdiyev/Desktop/qrsystem/qrsystem/obj/Debug/net8.0/qrsystem.pdb
 /Users/elgunhaqverdiyev/Desktop/qrsystem/qrsystem/obj/Debug/net8.0/qrsystem.genruntimeconfig.cache
 /Users/elgunhaqverdiyev/Desktop/qrsystem/qrsystem/obj/Debug/net8.0/ref/qrsystem.dll
-/Users/elgunhaqverdiyev/Desktop/qrsystem/qrsystem/bin/Debug/net8.0/Castle.Core.dll
-/Users/elgunhaqverdiyev/Desktop/qrsystem/qrsystem/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Proxies.dll

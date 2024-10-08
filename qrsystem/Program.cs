@@ -1,3 +1,4 @@
+using Microsoft.Extensions.FileProviders;
 using qrsystem;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +20,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "Images")),
+    RequestPath = "/Images"
+});
 
 app.UseHttpsRedirection();
 

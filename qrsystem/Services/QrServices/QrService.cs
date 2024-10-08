@@ -6,23 +6,50 @@ using qrsystem.Models.Entities;
 
 namespace qrsystem.Services.QrServices;
 
-public class QrService(QrSystemDB context): IQrService
+public class QrService(QrSystemDB context,IWebHostEnvironment webHostEnvironment): IQrService
 {
     private readonly QrSystemDB _context = context;
+    private readonly IWebHostEnvironment _hostEnvironment = webHostEnvironment;
 
 
-    public async Task<string> AddQr(QrAdd qrAddRequest)
+    public async Task<string> AddQr(QrAdd qrAddRequest , IFormFile Img)
     {
         var isUserExist = await _context.Users.AnyAsync(u => u.Id == qrAddRequest.UserId);
         
         if (!isUserExist) throw new InvalidOperationException("Username is not exist.");
+
+        string imgUrl = null;
+        if (Img != null && Img.Length > 0)
+        {
+            // Set the path where the Images folder is located (adjust the path as necessary)
+            var imagesFolder = Path.Combine("Images");
+            if (!Directory.Exists(imagesFolder))
+            {
+                Directory.CreateDirectory(imagesFolder);
+            }
+            
+            var fileName = Path.GetFileNameWithoutExtension(Img.FileName)+Path.GetExtension(Img.FileName);
+            var filePath = Path.Combine(imagesFolder, fileName);
+
+            if (!File.Exists(filePath))
+            {
+                // Save the image to the images folder
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await Img.CopyToAsync(stream);
+                }
+            }
+            
+            imgUrl = "/Images/" + fileName;
+
+        }
 
         var qr = new Qr()
         {
             Value = qrAddRequest.Value,
             BgColor = qrAddRequest.BgColor,
             FgColor = qrAddRequest.FgColor,
-            ImgUrl = qrAddRequest.ImgUrl,
+            ImgUrl = imgUrl,
             Title = qrAddRequest.Title,
             UserId = qrAddRequest.UserId
         };
