@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("qrsystem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4242f4185c83cf9a39296afefd2e154a336823cb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b7832f39529c657b0176bee52d9c2ebfb9a8af65")]
 [assembly: System.Reflection.AssemblyProductAttribute("qrsystem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("qrsystem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -9,6 +9,7 @@ public interface IQrService
     Task<string> AddQr(QrAdd qrAddRequest, IFormFile Img);
     Task<string> Update(QrUpdateRequest qrUpdateRequest);
     Task<List<QrGet>> GetAllQrs(UserRequest userRequest);
+    Task<QrGet> GetQrById(string qrId);
 
     Task<string> DeleteQr(QrDeleteRequest qrDeleteRequest);
     

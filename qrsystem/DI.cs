@@ -64,13 +64,15 @@ public static class DI
     {
         services.AddCors(options =>
         {
-            options.AddDefaultPolicy(builder =>
-            {
-                builder
-                    .WithOrigins("http://localhost:5173")
-                    .AllowAnyHeader()
-                    .AllowAnyMethod();
-            });
+            options.AddPolicy("AllowSpecificOrigin",
+                builder =>
+                {
+                    builder
+                        .WithOrigins("http://localhost:5173") // Allow the front-end origin
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowCredentials(); // If you're using cookies or credentials
+                });
         });
 
         return services;

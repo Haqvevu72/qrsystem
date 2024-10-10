@@ -34,7 +34,7 @@ public class UserController(IQrService service): ControllerBase
     {
         try
         {
-            await Task.Delay(1000);
+            await Task.Delay(500);
             var result = await _qrService.GetAllQrs(userRequest);
             return Ok(result);
         }
@@ -47,7 +47,25 @@ public class UserController(IQrService service): ControllerBase
             return BadRequest(ex.Message);
         }
     }
-    
+
+    [HttpPost("getqrbyid")]
+    public async Task<IActionResult> GetQrById(string qrId)
+    {
+        try
+        {
+            var result = await _qrService.GetQrById(qrId);
+            return Ok(result);
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
     [HttpDelete("removeqr")]
     public async Task<IActionResult> RemoveQr([FromBody] QrDeleteRequest qrDeleteRequest)
     {

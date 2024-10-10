@@ -29,7 +29,7 @@ app.UseStaticFiles(new StaticFileOptions
 
 app.UseHttpsRedirection();
 
-app.UseCors();
+app.UseCors("AllowSpecificOrigin");
 
 app.UseAuthentication();
 

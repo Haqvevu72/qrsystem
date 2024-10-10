@@ -40,7 +40,7 @@ public class QrService(QrSystemDB context,IWebHostEnvironment webHostEnvironment
                 }
             }
             
-            imgUrl = "/Images/" + fileName;
+            imgUrl = "Images/" + fileName;
 
         }
 
@@ -95,6 +95,29 @@ public class QrService(QrSystemDB context,IWebHostEnvironment webHostEnvironment
             .ToListAsync();
 
         return qrs;
+    }
+
+    public async Task<QrGet> GetQrById(string qrId)
+    {
+        var qr = await _context.Qrs.FirstOrDefaultAsync(qr => qr.Id == qrId);
+        if (qr is not null)
+        {
+            var newQr = new QrGet()
+            {
+                Id = qr.Id,
+                Value = qr.Value,
+                Title = qr.Title,
+                FgColor = qr.FgColor,
+                BgColor = qr.BgColor,
+                ImgUrl = qr.ImgUrl,
+                Scans = qr.Scans,
+                UserId = qr.UserId
+            };
+
+            return newQr;
+        }
+
+        return null;
     }
 
     public async Task<string> DeleteQr(QrDeleteRequest qrDeleteRequest)
