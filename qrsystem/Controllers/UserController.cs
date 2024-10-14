@@ -53,6 +53,7 @@ public class UserController(IQrService service): ControllerBase
     {
         try
         {
+            await Task.Delay(500);
             var result = await _qrService.GetQrById(qrId);
             return Ok(result);
         }
