@@ -85,4 +85,22 @@ public class UserController(IQrService service): ControllerBase
         }
     }
 
+    [HttpGet("getscancount")]
+    public async Task<IActionResult> GetScanCount(string qrId)
+    {
+        try
+        {
+            var result = await _qrService.GetQrById(qrId);
+            return Ok(result.Scans);
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
 }
