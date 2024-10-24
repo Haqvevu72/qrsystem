@@ -12,8 +12,8 @@ using qrsystem.Data;
 namespace qrsystem.Migrations
 {
     [DbContext(typeof(QrSystemDB))]
-    [Migration("20240923035736_mig_3")]
-    partial class mig_3
+    [Migration("20241024103540_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,7 +45,6 @@ namespace qrsystem.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImgUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Scans")
@@ -89,17 +88,8 @@ namespace qrsystem.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageUrl")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("PasswordHash")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PrivateKey")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PublicKey")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RefreshToken")
@@ -110,9 +100,6 @@ namespace qrsystem.Migrations
 
                     b.Property<DateTime>("UpdatedTime")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("WebsiteUrl")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

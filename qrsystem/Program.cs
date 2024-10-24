@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddDbContext(builder.Configuration);
 builder.Services.AddDomainServices();
+builder.Services.AddJwtAuthentication(builder.Configuration);
 builder.Services.AddCorsHandle();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
